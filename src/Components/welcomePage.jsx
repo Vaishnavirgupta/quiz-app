@@ -26,11 +26,9 @@ export default class Welcomepage extends Component {
                       <div className=" mt-5">
                         <Link to="/instruction">
                           {" "}
-                          <input
-                            className="btn btn-primary btn-lg mt-5"
-                            type="button"
-                            value="Read the Instructions For Quiz "
-                          />
+                          <button className="btn btn-primary" value="">
+                            Read the Instructions for Quiz
+                          </button>
                         </Link>
                       </div>
                     </div>
