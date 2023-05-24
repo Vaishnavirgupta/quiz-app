@@ -1,0 +1,66 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #6a11cb, rgba(37, 117, 252, 1));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+button {
+  width: 50%;
+  height: 6vh;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 576px) {
+  .card-registration {
+    margin-top: 30%;
+    margin-bottom: 30%;
+  }
+}
+
+@media (min-width: 576px) {
+  .card-registration {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-registration {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-registration {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-registration {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+}
