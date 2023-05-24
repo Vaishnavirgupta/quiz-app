@@ -44,7 +44,7 @@ class InstructionPage extends Component {
                         </li>
                         <li>
                           Make sure to click the "Submit & Next" button after
-                          select the answer of the Question.{" "}
+                          select the answer of the Question.
                         </li>
                         <li>
                           Make sure to click the "Submit" button at the end of

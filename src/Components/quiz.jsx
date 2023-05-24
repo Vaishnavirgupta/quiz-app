@@ -69,7 +69,6 @@ class Quiz extends Component {
       selectedAnswer: null,
     });
   };
-
   renderQuiz = () => {
     const { currentQuestion, timeLeft, selectedAnswer } = this.state;
     const question = questionsData[currentQuestion];
@@ -77,6 +76,8 @@ class Quiz extends Component {
     if (!question) {
       return null;
     }
+
+    const isLastQuestion = currentQuestion === questionsData.length - 1;
 
     return (
       <section className="vh-100 d-flex align-items-center justify-content-center">
@@ -111,16 +112,8 @@ class Quiz extends Component {
                   className="btn btn-primary"
                   onClick={() => this.handleAnswerSubmit(selectedAnswer)}
                 >
-                  Submit
+                  {isLastQuestion ? "Submit" : "Submit and Next"}
                 </button>
-                {currentQuestion < questionsData.length - 1 && (
-                  <button
-                    className="btn btn-primary"
-                    onClick={this.handleNextQuestion}
-                  >
-                    Next
-                  </button>
-                )}
               </div>
             </div>
           </div>
@@ -129,14 +122,74 @@ class Quiz extends Component {
     );
   };
 
+  // renderQuiz = () => {
+  //   const { currentQuestion, timeLeft, selectedAnswer } = this.state;
+  //   const question = questionsData[currentQuestion];
+
+  //   if (!question) {
+  //     return null;
+  //   }
+
+  //   return (
+  //     <section className="vh-100 d-flex align-items-center justify-content-center">
+  //       <div className="">
+  //         <div
+  //           className="card bg-dark text-white"
+  //           style={{ borderRadius: "15px" }}
+  //         >
+  //           <div className="card-body p-3">
+  //             <h2>{question.question}</h2>
+  //             <div className="timer" style={{ textAlign: "right" }}>
+  //               <FontAwesomeIcon icon={faClock} spin />
+  //               <span className="timer">{timeLeft}s</span>
+  //             </div>
+  //             <div className="options-container" style={{ textAlign: "left" }}>
+  //               {question.answers.map((answer, index) => (
+  //                 <div className="option" key={index}>
+  //                   <input
+  //                     className="form-check-input"
+  //                     type="radio"
+  //                     name="answer"
+  //                     value={answer}
+  //                     checked={selectedAnswer === answer}
+  //                     onChange={() => this.handleAnswerSelect(answer)}
+  //                   />
+  //                   <label className="px-lg-2">{answer}</label>
+  //                 </div>
+  //               ))}
+  //             </div>
+  //             <div className="btn-">
+
+  //               <button
+  //                 className="btn btn-primary"
+  //                 onClick={() => this.handleAnswerSubmit(selectedAnswer)}
+  //               >
+  //                 Submit
+  //               </button>
+  //               {/* {currentQuestion < questionsData.length - 1 && (
+  //                 <button
+  //                   className="btn btn-primary"
+  //                   onClick={this.handleNextQuestion}
+  //                 >
+  //                   Next
+  //                 </button> */}
+  //               {/* )} */}
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // };
+
   renderResult = () => {
     const { score } = this.state;
     const isPassed = score > 6;
 
     return (
       <section className="vh-100 d-flex align-items-center justify-content-center">
+        {isPassed && <Confetti />}
         <div className="">
-          {isPassed && <Confetti />}
           <div
             className="card bg-dark text-white"
             style={{ borderRadius: "15px" }}
