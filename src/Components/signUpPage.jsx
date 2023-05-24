@@ -44,10 +44,17 @@ export default class SignUpPage extends Component {
     toast.error("ALL Fields Required!", {
       position: toast.POSITION.TOP_RIGHT,
     });
+  // componentDidMount() {
+  //   let getDataFromLocal = JSON.parse(localStorage.getItem("SignUp"));
+  //   this.setState({ userDetails: getDataFromLocal });
+  // }
   componentDidMount() {
     let getDataFromLocal = JSON.parse(localStorage.getItem("SignUp"));
-    this.setState({ userDetails: getDataFromLocal });
+    if (getDataFromLocal) {
+      this.setState({ userDetails: getDataFromLocal });
+    }
   }
+
   handleSignUp = (e) => {
     e.preventDefault();
     const { userDetails, user } = this.state;
