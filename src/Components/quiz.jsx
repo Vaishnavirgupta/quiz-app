@@ -87,7 +87,7 @@ class Quiz extends Component {
           >
             <div className="card-body p-3">
               <h2>{question.question}</h2>
-              <div className="timer-">
+              <div className="timer" style={{ textAlign: "right" }}>
                 <FontAwesomeIcon icon={faClock} spin />
                 <span className="timer">{timeLeft}s</span>
               </div>
